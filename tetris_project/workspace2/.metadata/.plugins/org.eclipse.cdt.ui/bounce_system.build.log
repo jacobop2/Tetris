@@ -1,0 +1,6 @@
+12:26:07 **** Build of configuration Debug for project bounce_system ****
+make all 
+Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
+
+12:26:07 Build Finished (took 91ms)
+

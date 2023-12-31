@@ -1,0 +1,2 @@
+fp_start_rom.v,verilog,xil_defaultlib,../../../../ece385_final_project.gen/sources_1/ip/fp_start_rom/sim/fp_start_rom.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

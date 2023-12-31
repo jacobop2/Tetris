@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../ece385_final_project.gen/sources_1/ip/any_key_rom/sim/any_key_rom.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

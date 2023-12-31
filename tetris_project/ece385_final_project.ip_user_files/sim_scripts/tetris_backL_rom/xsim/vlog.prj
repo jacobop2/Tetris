@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../ece385_final_project.gen/sources_1/ip/tetris_backL_rom/sim/tetris_backL_rom.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

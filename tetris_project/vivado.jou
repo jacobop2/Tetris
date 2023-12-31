@@ -1,0 +1,835 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri Nov 10 10:00:45 2023
+# Process ID: 32936
+# Current directory: C:/Users/mered/School/final_project_ece385/final_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27488 C:\Users\mered\School\final_project_ece385\final_project\ece385_final_project.xpr
+# Log file: C:/Users/mered/School/final_project_ece385/final_project/vivado.log
+# Journal file: C:/Users/mered/School/final_project_ece385/final_project\vivado.jou
+# Running On: Meredith-XPS, OS: Windows, CPU Frequency: 2995 MHz, CPU Physical cores: 14, Host memory: 34014 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/bd/mb_block/mb_block.bd}
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name bg_rom
+set_property -dict [list \
+  CONFIG.Coe_File {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/final_project_background_7/final_project_background_7.COE} \
+  CONFIG.Component_Name {bg_rom} \
+  CONFIG.Enable_A {Always_Enabled} \
+  CONFIG.Load_Init_File {true} \
+  CONFIG.Memory_Type {Single_Port_ROM} \
+  CONFIG.Write_Depth_A {172800} \
+  CONFIG.Write_Width_A {4} \
+] [get_ips bg_rom]
+generate_target {instantiation_template} [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/bg_rom/bg_rom.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/bg_rom/bg_rom.xci]
+catch { config_ip_cache -export [get_ips -all bg_rom] }
+export_ip_user_files -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/bg_rom/bg_rom.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/bg_rom/bg_rom.xci]
+launch_runs bg_rom_synth_1 -jobs 10
+wait_on_run bg_rom_synth_1
+export_simulation -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/bg_rom/bg_rom.xci] -directory C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files -ipstatic_source_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/modelsim} {questa=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/questa} {riviera=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/riviera} {activehdl=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+import_files -norecurse {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/final_project_background_7/final_project_background_7_palette.sv C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/final_project_background_7/final_project_background_7_example.sv}
+update_compile_order -fileset sources_1
+import_files -norecurse C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/final_project_background_7/final_project_background_7_rom.sv
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/bd/mb_block/mb_block.bd}
+reset_run mb_block_dlmb_v10_0_synth_1
+reset_run mb_block_ilmb_v10_0_synth_1
+reset_run mb_block_microblaze_0_0_synth_1
+reset_run mb_block_clk_wiz_1_0_synth_1
+reset_run mb_block_xbar_0_synth_1
+reset_run mb_block_mdm_1_0_synth_1
+reset_run mb_block_axi_uartlite_0_0_synth_1
+reset_run mb_block_ilmb_bram_if_cntlr_0_synth_1
+reset_run mb_block_microblaze_0_axi_intc_0_synth_1
+reset_run mb_block_rst_clk_wiz_1_100M_0_synth_1
+reset_run mb_block_dlmb_bram_if_cntlr_0_synth_1
+reset_run mb_block_lmb_bram_0_synth_1
+reset_run hdmi_tx_0_synth_1
+reset_run clk_wiz_0_synth_1
+reset_run mb_block_axi_timer_0_0_synth_1
+reset_run mb_block_axi_gpio_1_0_synth_1
+reset_run mb_block_axi_quad_spi_0_0_synth_1
+reset_run mb_block_axi_gpio_2_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/final_project_background_7/final_project_background_7_rom.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/final_project_background_7/final_project_background_7_rom.sv
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+import_files -force -norecurse C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/final_project_background_7/final_project_background_7_rom.sv
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+export_ip_user_files -of_objects  [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/final_project_background_7/final_project_background_7_rom.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/final_project_background_7/final_project_background_7_rom.sv
+export_ip_user_files -of_objects  [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/final_project_background_7/final_project_background_7_example.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/final_project_background_7/final_project_background_7_example.sv
+update_compile_order -fileset sources_1
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name blk_mem_gen_0
+set_property -dict [list \
+  CONFIG.Coe_File {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/fpb_1/fpb_1.COE} \
+  CONFIG.Enable_A {Always_Enabled} \
+  CONFIG.Load_Init_File {true} \
+  CONFIG.Memory_Type {Single_Port_ROM} \
+  CONFIG.Write_Depth_A {12288} \
+  CONFIG.Write_Width_A {3} \
+] [get_ips blk_mem_gen_0]
+generate_target {instantiation_template} [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+generate_target all [get_files  c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_0] }
+export_ip_user_files -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+launch_runs blk_mem_gen_0_synth_1 -jobs 10
+wait_on_run blk_mem_gen_0_synth_1
+export_simulation -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -directory C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files -ipstatic_source_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/modelsim} {questa=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/questa} {riviera=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/riviera} {activehdl=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+import_files -norecurse {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/fpb_1/fpb_1_example.sv C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/fpb_1/fpb_1_palette.sv}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/bg_rom/bg_rom.xci] -no_script -reset -force -quiet
+remove_files  -fileset bg_rom c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/bg_rom/bg_rom.xci
+export_ip_user_files -of_objects  [get_files c:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/final_project_background_7/final_project_background_7.COE] -no_script -reset -force -quiet
+remove_files  c:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/final_project_background_7/final_project_background_7.COE
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/final_project_background_7/final_project_background_7_palette.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/final_project_background_7/final_project_background_7_palette.sv
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+open_run synth_1 -name synth_1
+close_design
+close_hw_manager
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name tetris_logo
+set_property -dict [list \
+  CONFIG.Coe_File {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_logo/tetris_logo.COE} \
+  CONFIG.Component_Name {tetris_logo} \
+  CONFIG.Enable_A {Always_Enabled} \
+  CONFIG.Load_Init_File {true} \
+  CONFIG.Memory_Type {Single_Port_ROM} \
+  CONFIG.Write_Depth_A {9600} \
+  CONFIG.Write_Width_A {4} \
+] [get_ips tetris_logo]
+generate_target {instantiation_template} [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci]
+generate_target all [get_files  c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci]
+catch { config_ip_cache -export [get_ips -all tetris_logo] }
+export_ip_user_files -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci]
+launch_runs tetris_logo_synth_1 -jobs 10
+wait_on_run tetris_logo_synth_1
+export_simulation -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci] -directory C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files -ipstatic_source_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/modelsim} {questa=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/questa} {riviera=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/riviera} {activehdl=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+import_files -norecurse {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_logo/tetris_logo_example.sv C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_logo/tetris_logo_palette.sv}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run impl_1
+update_compile_order -fileset sources_1
+close_hw_manager
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+close_hw_manager
+set_property -dict [list \
+  CONFIG.Coe_File {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_logo/tetris_logo.COE} \
+  CONFIG.Write_Depth_A {4800} \
+] [get_ips tetris_logo]
+generate_target all [get_files  c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci]
+catch { config_ip_cache -export [get_ips -all tetris_logo] }
+export_ip_user_files -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci] -no_script -sync -force -quiet
+reset_run tetris_logo_synth_1
+launch_runs tetris_logo_synth_1 -jobs 10
+wait_on_run tetris_logo_synth_1
+export_simulation -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci] -directory C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files -ipstatic_source_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/modelsim} {questa=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/questa} {riviera=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/riviera} {activehdl=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/tetris_logo/tetris_logo_example.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/tetris_logo/tetris_logo_example.sv
+export_ip_user_files -of_objects  [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/tetris_logo/tetris_logo_palette.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/tetris_logo/tetris_logo_palette.sv
+import_files -force -norecurse C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_logo/tetris_logo_palette.sv
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+close_hw_manager
+set_property -dict [list \
+  CONFIG.Coe_File {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_logo/tetris_logo.COE} \
+  CONFIG.Write_Width_A {3} \
+] [get_ips tetris_logo]
+generate_target all [get_files  c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci]
+catch { config_ip_cache -export [get_ips -all tetris_logo] }
+export_ip_user_files -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci] -no_script -sync -force -quiet
+reset_run tetris_logo_synth_1
+launch_runs tetris_logo_synth_1 -jobs 10
+wait_on_run tetris_logo_synth_1
+export_simulation -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci] -directory C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files -ipstatic_source_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/modelsim} {questa=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/questa} {riviera=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/riviera} {activehdl=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/tetris_logo/tetris_logo_palette.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/tetris_logo/tetris_logo_palette.sv
+import_files -force -norecurse C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_logo/tetris_logo_palette.sv
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+close_design
+close_project
+open_project C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.xpr
+update_compile_order -fileset sources_1
+set_property -dict [list \
+  CONFIG.Coe_File {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_logo/tetris_logo.COE} \
+  CONFIG.Write_Width_A {4} \
+] [get_ips tetris_logo]
+generate_target all [get_files  C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci]
+catch { config_ip_cache -export [get_ips -all tetris_logo] }
+export_ip_user_files -of_objects [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci] -no_script -sync -force -quiet
+reset_run tetris_logo_synth_1
+launch_runs tetris_logo_synth_1 -jobs 10
+wait_on_run tetris_logo_synth_1
+export_simulation -of_objects [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_logo/tetris_logo.xci] -directory C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files -ipstatic_source_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/modelsim} {questa=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/questa} {riviera=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/riviera} {activehdl=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/tetris_logo/tetris_logo_palette.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/imports/tetris_logo/tetris_logo_palette.sv
+import_files -force -norecurse C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_logo/tetris_logo_palette.sv
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+close_hw_manager
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name tetris_I_rom
+set_property -dict [list \
+  CONFIG.Coe_File {C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_I/tetris_I.COE} \
+  CONFIG.Component_Name {tetris_I_rom} \
+  CONFIG.Enable_A {Always_Enabled} \
+  CONFIG.Load_Init_File {true} \
+  CONFIG.Memory_Type {Single_Port_ROM} \
+  CONFIG.Write_Depth_A {1024} \
+  CONFIG.Write_Width_A {4} \
+] [get_ips tetris_I_rom]
+generate_target {instantiation_template} [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_I_rom/tetris_I_rom.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_I_rom/tetris_I_rom.xci]
+catch { config_ip_cache -export [get_ips -all tetris_I_rom] }
+export_ip_user_files -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_I_rom/tetris_I_rom.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_I_rom/tetris_I_rom.xci]
+launch_runs tetris_I_rom_synth_1 -jobs 10
+wait_on_run tetris_I_rom_synth_1
+export_simulation -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_I_rom/tetris_I_rom.xci] -directory C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files -ipstatic_source_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/modelsim} {questa=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/questa} {riviera=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/riviera} {activehdl=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+close_hw_manager
+import_files -norecurse C:/Users/mered/School/Image_to_COE-master/Image_to_COE-master/tetris_I/tetris_I_palette.sv
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close [ open C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/new/tetris_I.sv w ]
+add_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/new/tetris_I.sv
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+open_bd_design {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/bd/mb_block/mb_block.bd}
+open_run impl_1
+close_design
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/bd/mb_block/mb_block.bd]
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_01.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+close_hw_manager
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_02.xsa
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_03.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw_manager
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_04.xsa
+close_hw_manager
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_05.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_06.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_07.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_08.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_09.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_10.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_11.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_12.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name tetris_board_ram
+set_property -dict [list \
+  CONFIG.Assume_Synchronous_Clk {true} \
+  CONFIG.Component_Name {tetris_board_ram} \
+  CONFIG.Enable_A {Always_Enabled} \
+  CONFIG.Enable_B {Always_Enabled} \
+  CONFIG.Memory_Type {True_Dual_Port_RAM} \
+  CONFIG.Operating_Mode_B {WRITE_FIRST} \
+  CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \
+  CONFIG.Register_PortB_Output_of_Memory_Primitives {false} \
+  CONFIG.Write_Depth_A {200} \
+  CONFIG.Write_Width_A {1} \
+] [get_ips tetris_board_ram]
+generate_target {instantiation_template} [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_board_ram/tetris_board_ram.xci]
+generate_target all [get_files  c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_board_ram/tetris_board_ram.xci]
+catch { config_ip_cache -export [get_ips -all tetris_board_ram] }
+export_ip_user_files -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_board_ram/tetris_board_ram.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_board_ram/tetris_board_ram.xci]
+launch_runs tetris_board_ram_synth_1 -jobs 10
+wait_on_run tetris_board_ram_synth_1
+export_simulation -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_board_ram/tetris_board_ram.xci] -directory C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files -ipstatic_source_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/modelsim} {questa=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/questa} {riviera=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/riviera} {activehdl=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+close [ open C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/new/fsm.sv w ]
+add_files C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/new/fsm.sv
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_13.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw_manager
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_14.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_15.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_16.xsa
+close_hw_manager
+update_compile_order -fileset sources_1
+set_property CONFIG.Fill_Remaining_Memory_Locations {true} [get_ips tetris_board_ram]
+generate_target all [get_files  c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_board_ram/tetris_board_ram.xci]
+catch { config_ip_cache -export [get_ips -all tetris_board_ram] }
+export_ip_user_files -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_board_ram/tetris_board_ram.xci] -no_script -sync -force -quiet
+reset_run tetris_board_ram_synth_1
+launch_runs tetris_board_ram_synth_1 -jobs 10
+wait_on_run tetris_board_ram_synth_1
+export_simulation -of_objects [get_files c:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.srcs/sources_1/ip/tetris_board_ram/tetris_board_ram.xci] -directory C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files -ipstatic_source_dir C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/modelsim} {questa=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/questa} {riviera=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/riviera} {activehdl=C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_17.xsa
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_18.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_19.xsa
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_20.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_21.xsa
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_22.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_23.xsa
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_24.xsa
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.runs/impl_1/mb_usb_hdmi_top.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+close_hw_manager
+close_project
+open_project C:/Users/mered/School/final_project_ece385/final_project/ece385_final_project.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_25.xsa
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_26.xsa
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_27.xsa
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_28.xsa
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_29.xsa
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_30.xsa
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/mered/School/final_project_ece385/final_project/mb_usb_hdmi_top_final_31.xsa
